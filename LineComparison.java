@@ -1,8 +1,29 @@
 package Line_Comparison;
 
+import java.util.Scanner;
+
+//UC1-As a fan of Geometry,I want to model a line based on a point consisting of (x,y) co-ordinates using the
+//Cartesian System, So that I can Calculate its length.
+//A Length as 2 points (X1,Y1) and (X2,Y2)
+//Length of a Line = Sqrt(X2-X1)^2+(Y2-Y1)^2)
+
 public class LineComparison {
     public static void main(String[] args) {
-        System.out.print("Welcome");
+        System.out.println("Welcome to The Line Comparison Computation Program");
+
+        Scanner scanner = new Scanner(System.in);          // scanner class to take the input from user
+        System.out.print("Enter x1 of First Point: ");
+        int x1 = scanner.nextInt();
+        System.out.print("Enter y1 of First Point: ");
+        int y1 = scanner.nextInt();
+        System.out.print("Enter x2 of Second Point: ");
+        int x2 = scanner.nextInt();
+        System.out.print("Enter y2 of Second Point: ");
+        int y2 = scanner.nextInt();
+        scanner.close();
+
+        double lenghtOfLine = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));    // calculate the length of line
+        System.out.printf("Length of Line is : %.2f %n", lenghtOfLine);
     }
 }
 
