@@ -2,16 +2,15 @@ package Line_Comparison;
 
 import java.util.Scanner;
 
-//UC1-As a fan of Geometry,I want to model a line based on a point consisting of (x,y) co-ordinates using the
-//Cartesian System, So that I can Calculate its length.
-//A Length as 2 points (X1,Y1) and (X2,Y2)
-//Length of a Line = Sqrt(X2-X1)^2+(Y2-Y1)^2)
+//UC2-As a fan of geometry, I want to check equality of two lines based on the end points, so that I know
+//when two lines are the equal
+//Using java equals method to check equality of 2 Length is preferable
+
 
 public class LineComparison {
     public static void main(String[] args) {
-        System.out.println("Welcome to The Line Comparison Computation Program");
 
-        Scanner scanner = new Scanner(System.in);          // scanner class to take the input from user
+        Scanner scanner = new Scanner(System.in);              // scanner class to take the input from user
         System.out.print("Enter x1 of First Point: ");
         int x1 = scanner.nextInt();
         System.out.print("Enter y1 of First Point: ");
@@ -20,12 +19,30 @@ public class LineComparison {
         int x2 = scanner.nextInt();
         System.out.print("Enter y2 of Second Point: ");
         int y2 = scanner.nextInt();
+
+        System.out.print("Enter x1 of Third Point: ");
+        int p1 = scanner.nextInt();
+        System.out.print("Enter y1 of Third Point: ");
+        int q1 = scanner.nextInt();
+        System.out.print("Enter x2 of Forth Point: ");
+        int p2 = scanner.nextInt();
+        System.out.print("Enter y2 of Forth Point: ");
+        int q2 = scanner.nextInt();
         scanner.close();
 
-        double lenghtOfLine = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));    // calculate the length of line
-        System.out.printf("Length of Line is : %.2f %n", lenghtOfLine);
+        Double lenghtOfLine1 = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));      // calculate the length of first line
+        Double lengthOfLine2 = Math.sqrt(Math.pow(p2 - p1, 2) + Math.pow(q2 - q1, 2));     // calculate the length of second line
+
+        int result = lenghtOfLine1.compareTo(lengthOfLine2);                          // return 0 , <0 or >0
+        if (result > 0)
+            System.out.println("Length of First end points is Greater than Length of Second end Points");
+        else if (result < 0)
+            System.out.println("Length of First end points is Less than Length of Second end Points");
+        else
+            System.out.println("Both lines are Equal");
     }
 }
+
 
 
 
